@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Login
+    </title>
+
+   
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <table>
+                <form class="login-form">
+                    <tr>
+                        <td>Username:</td>
+                        <td><input id="elm-signUp-email" type="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input id="elm-signUp-pass" type="password" name="password"></td>
+                    </tr>
+                    <button value="signUp" onclick="signUp()">Sign Up</button>
+                </form>
+            </table>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCZAu8eqOe5YuUBxpOqOhn7xJu9pzQ8YX4",
+            authDomain: "leave-ms.firebaseapp.com",
+            databaseURL: "https://leave-ms.firebaseio.com",
+            projectId: "leave-ms",
+            storageBucket: "leave-ms.appspot.com",
+            messagingSenderId: "506915659536",
+            appId: "1:506915659536:web:a82cd03b43301064670f95",
+            measurementId: "G-H95P45Y6DG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+</body>
+<script>
+
+    function signUp() {
+        var email = document.getElementById('elm-signUp-email').value;
+        var password = document.getElementById('elm-signUp-pass').value;
+
+        // firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        //     // Handle Errors here.
+        //     var errorCode = error.code;
+        //     var errorMessage = error.message;
+        //     // ...
+        // });
+
+    }
+
+</script>
+
+</html>
