@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../Resources/CSS/home.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title>Dashboard</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top elm-side-nav" id="">
+        <div class="elm-nav-brand">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="../Resources/Images/bootstrapIcon1.svg" width="30" height="30"
+                    class="d-inline-block align-top" alt="image not found">
+                ELMS
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <hr class="elm-nav-hr">
+    
+        <!-- <div class="elm-nav-search">
+              <input type="text" value="" class="elm-search-box">
+            </div> -->
+    
+        <div>
+    
+            <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+    
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link active" id="nav-0" data-toggle="pill"
+                            href="#" role="tab" aria-selected="true">Profile</a></li>
+                    <li class="nav-item"> <a class="nav-link" id="nav-1" data-toggle="pill"
+                            href="#" role="tab" aria-selected="false">Apply Leave</a></li>
+                    <li class="nav-item"> <a class="nav-link" id="nav-2" data-toggle="pill"
+                            href="#" role="tab" aria-selected="false">View Leaves</a></li>
+                    <li class="nav-item"> <a class="nav-link" id="nav-3" data-toggle="pill"
+                            href="#" role="tab" aria-selected="false">Logout</a></li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid p-0">
+        <!--Profile-->
+        <div class="elm-container p-3 p-lg-5 d-flex align-items-center w-100" id="tab-0">
+          <div>
+            <div class="elm-label-1">Welcome 
+              <span class="elm-label-2">User!</span>
+              <div class="elm-label-3">
+                National Institute of Technology, Kurukshetra
+              </div>
+            </div>
+            <div class="elm-home-content">
+              Apply and view your leaves in this section!
+            </div>
+          </div>
+          <div class="elm-home-content elm-quick-links">
+            QUICK-LINKS
+          </div>
+          <div class="elm-image-map">
+            <img src="../Resources/Images/mapImg.jpg" alt="image for navigation" usemap="#elm-nav-map">
+          </div>
+        </div>
+
+        <map name="elm-nav-map">
+          <area shape="rect" coords="0,0,115,115" alt="home" href="../Home/home.html">
+          <area shape="rect" coords="115,0,230,115" alt="feedback" href="../Home/home.html" id="show-feedback">
+          <area shape="rect" coords="0,115,115,230" alt="apply-leave" href="#" id="show-apply">
+          <area shape="rect" coords="115,115,230,230" alt="view-leaves" href="#" id="show-view">
+        </map>
+
+
+
+        <!--Apply Leave-->
+        <div class="elm-container p-3 p-lg-5 d-flex align-items-center" id="tab-1">
+          <div>
+            <h1 class="elm-label">Apply Leave</h1>
+          </div>
+          <form name="apply" onsubmit="validateApply()">
+            <div class="row">
+              <div class="col">
+                <label class="elm-input-label">Select Date</label>
+                <input type="date" class="form-control elm-input-box" min="2020-01-01" name="date">
+              </div>
+              <div class="col">
+                <label class="elm-input-label">Password</label>
+                <input type="password" class="form-control elm-input-box" placeholder="Password" name="pass">
+              </div>
+            </div>
+            <div class="row">
+              <textarea class="form-control elm-feed-box" placeholder="Remarks" name="remarks"></textarea>
+            </div>
+            <div class="row elm-login-submit">
+              <input type="submit" class="form-control elm-btn btn btn-outline-dark" value="APPLY">
+            </div>
+          </form>
+        </div>
+
+
+        <!--View leaves-->
+        <div class="elm-container p-3 p-lg-5 d-flex align-items-center" id="tab-2">
+          <div>
+            <h1 class="elm-label">View Leaves</h1>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered elm-table">
+              <thead>
+                <tr>
+                  <th scope="col">Sr. No.</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+        </div>
+
+
+
+
+
+  <script src="../Resources/JS/dashboard.js"></script>      
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

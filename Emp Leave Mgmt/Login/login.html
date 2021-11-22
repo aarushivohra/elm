@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Login
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="../Resources/CSS/login.css">
+
+</head>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCZAu8eqOe5YuUBxpOqOhn7xJu9pzQ8YX4",
+        authDomain: "leave-ms.firebaseapp.com",
+        databaseURL: "https://leave-ms.firebaseio.com",
+        projectId: "leave-ms",
+        storageBucket: "leave-ms.appspot.com",
+        messagingSenderId: "506915659536",
+        appId: "1:506915659536:web:a82cd03b43301064670f95",
+        measurementId: "G-H95P45Y6DG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<script src="../Resources/JS/login.js"></script>
+
+<body onload="myJSFx()">
+    <div class="container">
+        <div class="form">
+            <table class="tab-group">
+                <tr>
+                <td class="tab-0"><a href="#active-0">Sign Up</a></td>
+                <td class="tab-1"><a href="#active-1">Login</a></td>
+                </tr>
+            </table>
+
+            <div class="tab-content">
+                <div id="active-0">
+                    <table>
+                        <tr>
+                            <td><label>Username:</label></td>
+                            <td><input id="elm-signUp-email" type="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password:</label></td>
+                            <td><input id="elm-signUp-pass" type="password" name="password" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><button value="signUp" onclick="signUp()" class="button button-block">Get Started</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="active-1">
+                    <table>
+                        <tr>
+                            <td><label>Username:</label></td>
+                            <td><input id="elm-signUp-email" type="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password:</label></td>
+                            <td><input id="elm-signUp-pass" type="password" name="password" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><button value="login" onclick="login()" class="button button-block">Login</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+<script>
+
+    function signUp() {
+        var email = document.getElementById('elm-signUp-email').value;
+        var password = document.getElementById('elm-signUp-pass').value;
+
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("Success");
+            // ...
+        });
+
+    }
+
+</script>
+
+</html>
